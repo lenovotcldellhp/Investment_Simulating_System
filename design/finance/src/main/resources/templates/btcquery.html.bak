@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>比特币价格查询 </title>
+</head>
+<body>
+<h2>比特币价格查询</h2>
+<table>
+    <thead>
+    <tr>
+        <th>价格</th><th>时间</th>
+    </tr></thead>
+
+    <tr data-th-each="stock:${pricelist}">
+        <td data-th-text="${stock.price}"></td>
+        <td data-th-text="${stock.time}"></td>
+
+    </tr>
+
+
+</table>
+</body>
+</html>

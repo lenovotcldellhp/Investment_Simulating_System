@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>比特币交易操作</title>
+</head>
+<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<body>
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <nav class="navbar navbar-default" role="navigation">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="index">投资演练平台</a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="stockquery">股票行情</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                BTC行情 <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="btcquerytoday">今日</a></li>
+                                <li><a href="btcquery3day">3日</a></li>
+                                <li><a href="btcquery7day">7日</a></li>
+                                <li class="divider"></li>
+                                <li><a href="btchistory">历史</a></li>
+                                <li class="divider"></li>
+
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                LTC行情 <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="ltcquerytoday">今日</a></li>
+                                <li><a href="ltcquery3day">3日</a></li>
+                                <li><a href="ltcquery7day">7日</a></li>
+                                <li class="divider"></li>
+                                <li><a href="ltchistory">历史</a></li>
+                                <li class="divider"></li>
+
+                            </ul>
+                        </li>
+
+
+                        <li>
+                            <a href="stockbuy">股票交易</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                BTC交易 <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="btcbuy">买入</a></li>
+                                <li><a href="btcsell">卖出</a></li>
+
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                LTC交易 <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="ltcbuy">买入</a></li>
+                                <li><a href="ltcsell">卖出</a></li>
+
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                用户信息 <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="record">交易记录</a></li>
+                                <li><a href="holding">当前持仓</a></li>
+
+                                <li><a href="balance">查询余额</a></li>
+                                <li><a href="changepassword">修改密码</a></li>
+
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="analyse">盈亏分析</a>
+                        </li>
+                        <li>
+                            <a href="recommend">股票推荐</a>
+                        </li>
+
+                    </ul>
+
+
+                    <ul class="nav navbar-nav navbar-right">
+
+                        <li>
+                            <!--  <p th:text="'当前剩余本金: ' + ${user.balance}" />-->
+                        </li>
+                        <li>
+                            <!-- <button type="button" class="btn btn-danger" onclick="help()">帮助与支持</button>-->
+                            <!--  <a href="#">登录</a>-->
+                        </li>
+
+                    </ul>
+                </div>
+
+            </nav>
+        </div></div></div>
+<div class="row clearfix">
+    <div class="col-md-4 column">
+    </div>
+    <div class="col-md-4 column">
+        <h2>比特币买入</h2>
+        <div class="alert alert-info">买入手续费率为0.1%。</div>
+        <form action="#" th:action="@{/btcbuy}" th:object="${trade1}" method="post">
+            <p>交易量: <input class="form-control" type="text" th:field="*{count}" /></p>
+         <!--   <p>密码: <input class="form-control" type="password" th:field="*{password}" /></p>-->
+            <p><input class="btn btn-success" type="submit" value="提交" /> <input class="btn btn-warning" type="reset" value="重填" /></p>
+        </form>
+
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>比特币历史价格信息</title>
+</head>
+<body>
+<h2>比特币历史价格查询</h2>
+<table>
+    <thead>
+    <tr>
+        <th>日期</th><th>最高</th><th>最低</th><th>开盘</th><th>收盘</th>
+    </tr></thead>
+
+    <tr data-th-each="stock:${pricelist}">
+        <td data-th-text="${stock.date}"></td>
+        <td data-th-text="${stock.highest}"></td>
+        <td data-th-text="${stock.lowest}"></td>
+        <td data-th-text="${stock.start_price}"></td>
+        <td data-th-text="${stock.final_price}"></td>
+
+    </tr>
+
+
+</table>
+</body>
+</html>
